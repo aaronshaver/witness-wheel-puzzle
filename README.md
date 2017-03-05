@@ -1,6 +1,6 @@
 # witness-wheel-puzzle
 
-Calculates max unique paths for the 8-node "wheel" puzzles from The Witness
+This program calculates the maximum unique paths for the 7-node "wheel" puzzles from the game The Witness.
 
 The puzzles have 7 nodes (which all act as starting points), and 6 of those nodes have "exits" (your path finishes and you're unable to draw anymore). You can't revisit or pass through a node if you've been on it in the past. There are 12 vertices in the puzzle.
 
@@ -35,3 +35,5 @@ I will now attempt to draw an ASCII version of the puzzle:
                            X |       |
                              |       |
                              +-------+
+
+If that diagram doesn't do the trick, try this URL, which has screenshots from the game: http://www.ign.com/wikis/the-witness/Desert_Ruins
