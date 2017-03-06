@@ -29,6 +29,6 @@ class Puzzle:
     def solve(self, graph=None):
         unique_paths = []
         for exit in self.get_all_exits(graph):
-            for key, value in graph.items():
-                unique_paths += self.find_all_paths(graph, key, exit)
+            for start, connected_nodes in graph.items():
+                unique_paths += self.find_all_paths(graph, start, exit)
         return unique_paths
