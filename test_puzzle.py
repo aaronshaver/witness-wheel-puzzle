@@ -6,30 +6,16 @@ import unittest
 
 class TestPuzzle(unittest.TestCase):
     def setUp(self):
-        self.sample_node = Node(True, 'a', ['b', 'i', 'h'])
+        self.a_graph = {'a': ['aExit']}
+        self.ab_graph = {
+            'a': ['b', 'aExit'],
+            'b': ['a', 'bExit']
+        }
+        self.puzzle = Puzzle()
 
-    def test_node_has_exit(self):
-        self.assertTrue(self.sample_node.has_exit)
+    def test_solve_single_node_single_exit(self):
+        self.assertEqual('Unique paths: 1.', self.puzzle.solve(self.a_graph))
 
-    def test_node_get_name(self):
-        self.assertEqual('a', self.sample_node.name)
-
-    def test_node_get_connected_to(self):
-        self.assertEqual(['b', 'i', 'h'], self.sample_node.connected_to)
-
-    def test_node_set_connected_to(self):
-        self.sample_node.connected_to = ['f', 'e', 'd']
-        self.assertEqual(['f', 'e', 'd'], self.sample_node.connected_to)
-
-    def test_wheel_add_node(self):
-        wheel = Wheel()
-        wheel.nodes.append(self.sample_node)
-        self.assertEqual(['b', 'i', 'h'], wheel.nodes[0].connected_to)
-
-    def test_solve(self):
-        wheel = Wheel()
-        wheel.nodes.append(self.sample_node)
-        puzzle = Puzzle()
-        self.assertEqual(
-            'Nodes: 1. Exits: 1. Unique paths: 702.',
-            puzzle.solve(wheel))
+    def test_solve_two_nodes_two_exits(self):
+        self.assertEqual('Unique paths: 4.', self.puzzle.solve(
+            self.ab_graph))

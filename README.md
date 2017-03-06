@@ -2,9 +2,14 @@
 
 ## Description
 
-This program calculates the maximum unique paths for the 7-node "wheel" puzzles from the game The Witness.
+This program calculates the maximum unique paths for the "wheel" puzzles from the game The Witness.
 
-The puzzles have 7 nodes (which all act as starting points), and 6 of those nodes have "exits" (your path finishes and you're unable to draw anymore). You can't revisit or pass through a node if you've been on it in the past. There are 12 vertices in the puzzle.
+The puzzles have 7 normal nodes (which all act as starting points), and 6 of those nodes have "exit"
+nodes attached to the outside of them (where your path finishes and you're unable to draw anymore).
+You can't revisit or pass through a node if you've been on it in the past. There are 12 normal vertices in the puzzle.
+If you count the edge normal nodes connecting to the exit nodes, there are 18 vertices.
+
+Exits are special nodes: you can't start on an exit, and you must finish on an exit.
 
 I will now attempt to draw an ASCII version of the puzzle:
 
