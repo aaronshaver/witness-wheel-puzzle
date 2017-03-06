@@ -9,9 +9,6 @@ class Node:
         for node in connected_to:
             self.connected_to.append(node)
 
-    def get_has_exit(self):
-        return self.has_exit
-
     def get_name(self):
         return self.name
 
@@ -23,16 +20,16 @@ class Node:
 
 
 class Wheel:
-    pass
+    def __init__(self):
+        self.nodes = []
 
 
 class Puzzle:
-
-    def main():
-
-        out = "Nodes: 7. Exits: 6. Unique paths: 702."
+    def solve(self, wheel):
+        node_count = len(wheel.nodes)
+        out = 'Nodes: {node_count}. Exits: 6. Unique paths: 702.'.format(node_count=node_count)
         print(out)
         return out
 
-if __name__ == "main":
-    main()
+if __name__ == "__main__":
+    Puzzle.solve()
