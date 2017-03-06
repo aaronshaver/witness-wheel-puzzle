@@ -27,13 +27,11 @@ class Puzzle:
         return paths
 
     def solve(self, graph=None):
-        paths = 0
+        unique_paths = []
         for exit in self.get_all_exits(graph):
             for key, value in graph.items():
-                paths += len(self.find_all_paths(graph, key, exit))
-        out = 'Unique paths: {paths}.'.format(paths=paths)
-
-        return out
+                unique_paths += self.find_all_paths(graph, key, exit)
+        return unique_paths
 
 if __name__ == "__main__":
     pass

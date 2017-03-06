@@ -6,16 +6,49 @@ import unittest
 
 class TestPuzzle(unittest.TestCase):
     def setUp(self):
-        self.a_graph = {'a': ['aExit']}
-        self.ab_graph = {
+        self.one_node_one_exit = {'a': ['aExit']}
+        self.two_nodes_two_exits = {
             'a': ['b', 'aExit'],
             'b': ['a', 'bExit']
+        }
+        self.three_nodes_two_exits = {
+            'a': ['b', 'c', 'aExit'],
+            'b': ['a', 'c', 'bExit'],
+            'c': ['a', 'b']
+        }
+        self.four_nodes_three_exits = {
+            'a': ['b', 'c', 'd', 'aExit'],
+            'b': ['a', 'c', 'bExit'],
+            'c': ['d', 'b', 'a'],
+            'd': ['a', 'c', 'dExit']
+        }
+        self.seven_nodes_six_exits = {
+            'a': ['b', 'f', 'g' 'aExit'],
+            'b': ['a', 'c', 'g' 'bExit'],
+            'c': ['b', 'd', 'g' 'cExit'],
+            'd': ['c', 'e', 'g' 'dExit'],
+            'e': ['d', 'f', 'g' 'eExit'],
+            'f': ['e', 'a', 'g' 'fExit'],
+            'g': ['a', 'b' 'c', 'd', 'e', 'f']
         }
         self.puzzle = Puzzle()
 
     def test_solve_single_node_single_exit(self):
-        self.assertEqual('Unique paths: 1.', self.puzzle.solve(self.a_graph))
+        self.assertEqual(1, len(self.puzzle.solve(
+            self.one_node_one_exit)))
 
     def test_solve_two_nodes_two_exits(self):
-        self.assertEqual('Unique paths: 4.', self.puzzle.solve(
-            self.ab_graph))
+        self.assertEqual(4, len(self.puzzle.solve(
+            self.two_nodes_two_exits)))
+
+    def test_solve_three_nodes_two_exits(self):
+        self.assertEqual(10, len(self.puzzle.solve(
+            self.three_nodes_two_exits)))
+
+    def test_solve_four_nodes_three_exits(self):
+        self.assertEqual(32, len(self.puzzle.solve(
+            self.four_nodes_three_exits)))
+
+    def test_solve_seven_nodes_six_exits(self):
+        self.assertEqual(116, len(self.puzzle.solve(
+            self.seven_nodes_six_exits)))
