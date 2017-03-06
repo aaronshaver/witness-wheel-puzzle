@@ -32,6 +32,3 @@ class Puzzle:
             for key, value in graph.items():
                 unique_paths += self.find_all_paths(graph, key, exit)
         return unique_paths
-
-if __name__ == "__main__":
-    pass
