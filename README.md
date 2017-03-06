@@ -42,4 +42,6 @@ If that diagram doesn't do the trick, try this URL, which has screenshots from t
 
 ## Usage
 
-To run the program: ``python
+To run the program: ``python puzzle.py``
+
+To run the tests: ``python -m unittest discover``
