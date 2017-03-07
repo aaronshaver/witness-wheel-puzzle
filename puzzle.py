@@ -7,7 +7,7 @@ class Puzzle:
         for key, value in graph.items():
             for item in value:
                 if 'Exit' in item:
-                    exits += item
+                    exits += key
         return exits
 
     def find_all_paths(self, graph, start, end, path=None):
