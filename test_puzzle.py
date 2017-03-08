@@ -47,12 +47,12 @@ class TestPuzzle(unittest.TestCase):
             'e': ['a', 'c', 'b', 'd', 'eExit']
         }
         self.the_witness_seven_nodes_six_exits = {
-            'a': ['b', 'f', 'g' 'aExit'],
-            'b': ['a', 'c', 'g' 'bExit'],
-            'c': ['b', 'd', 'g' 'cExit'],
-            'd': ['c', 'e', 'g' 'dExit'],
-            'e': ['d', 'f', 'g' 'eExit'],
-            'f': ['e', 'a', 'g' 'fExit'],
+            'a': ['b', 'f', 'g', 'aExit'],
+            'b': ['a', 'c', 'g', 'bExit'],
+            'c': ['b', 'd', 'g', 'cExit'],
+            'd': ['c', 'e', 'g', 'dExit'],
+            'e': ['d', 'f', 'g', 'eExit'],
+            'f': ['e', 'a', 'g', 'fExit'],
             'g': ['a', 'b' 'c', 'd', 'e', 'f']
         }
         self.puzzle = Puzzle()
@@ -90,5 +90,5 @@ class TestPuzzle(unittest.TestCase):
             self.five_nodes_five_exits_max_connections)))
 
     def test_solve_the_witness_seven_nodes_six_exits(self):
-        self.assertEqual(116, len(self.puzzle.solve(
+        self.assertEqual(450, len(self.puzzle.solve(
             self.the_witness_seven_nodes_six_exits)))
