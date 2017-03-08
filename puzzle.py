@@ -7,7 +7,7 @@ class Puzzle:
         for root_node, connected_nodes in graph.items():
             for node in connected_nodes:
                 if 'Exit' in node:
-                    exits += node
+                    exits.append(node)
         return exits
 
     def find_all_paths(self, graph, start, end, path=None):
