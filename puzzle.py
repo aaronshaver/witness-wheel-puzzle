@@ -4,10 +4,10 @@
 class Puzzle:
     def get_all_exits(self, graph):
         exits = []
-        for key, value in graph.items():
-            for item in value:
-                if 'Exit' in item:
-                    exits += item
+        for root_node, connected_nodes in graph.items():
+            for node in connected_nodes:
+                if 'Exit' in node:
+                    exits += node
         return exits
 
     def find_all_paths(self, graph, start, end, path=None):
