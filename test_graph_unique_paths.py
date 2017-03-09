@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
 import json
-from puzzle import *
+import graph_unique_paths
 import unittest
+
+graph = graph_unique_paths
 
 
 class TestPuzzle(unittest.TestCase):
@@ -58,40 +60,36 @@ class TestPuzzle(unittest.TestCase):
             'f': ['e', 'a', 'g', 'fExit'],
             'g': ['a', 'b' 'c', 'd', 'e', 'f']
         }
-        self.puzzle = Puzzle()
 
     def test_solve_one_start_one_end(self):
-        self.assertEqual(1, len(self.puzzle.solve(
+        self.assertEqual(1, len(graph.solve(
             self.one_start_one_end)))
 
     def test_solve_two_starts_two_ends(self):
-        self.assertEqual(4, len(self.puzzle.solve(
-            self.two_starts_two_ends)))
+        self.assertEqual(4, len(graph.solve(self.two_starts_two_ends)))
 
     def test_solve_three_starts_two_ends(self):
-        self.assertEqual(10, len(self.puzzle.solve(
-            self.three_starts_two_ends)))
+        self.assertEqual(10, len(graph.solve(self.three_starts_two_ends)))
 
     def test_solve_three_starts_three_ends(self):
-        self.assertEqual(15, len(self.puzzle.solve(
-            self.three_starts_three_ends)))
+        self.assertEqual(15, len(graph.solve(self.three_starts_three_ends)))
 
     def test_solve_four_starts_three_ends(self):
-        self.assertEqual(32, len(self.puzzle.solve(
+        self.assertEqual(32, len(graph.solve(
             self.four_starts_three_ends)))
 
     def test_solve_four_starts_four_ends(self):
-        self.assertEqual(42, len(self.puzzle.solve(
+        self.assertEqual(42, len(graph.solve(
             self.four_starts_four_ends)))
 
     def test_solve_four_starts_four_ends_max_connections(self):
-        self.assertEqual(64, len(self.puzzle.solve(
+        self.assertEqual(64, len(graph.solve(
             self.four_starts_four_ends_max_connections)))
 
     def test_solve_five_starts_five_ends_max_connections(self):
-        self.assertEqual(325, len(self.puzzle.solve(
+        self.assertEqual(325, len(graph.solve(
             self.five_starts_five_ends_max_connections)))
 
     def test_solve_the_witness_seven_starts_six_ends(self):
-        self.assertEqual(450, len(self.puzzle.solve(
+        self.assertEqual(450, len(graph.solve(
             self.the_witness_seven_starts_six_ends)))
