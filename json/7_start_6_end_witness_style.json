@@ -1,0 +1,84 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "a",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["f", "b", "g"]
+      },
+      {
+        "id": "b",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["a", "c", "g"]
+      },
+      {
+        "id": "c",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["b", "d", "g"]
+      },
+      {
+        "id": "d",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["c", "e", "g"]
+      },
+      {
+        "id": "e",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["d", "f", "g"]
+      },
+      {
+        "id": "f",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["e", "a", "g"]
+      },
+      {
+        "id": "aexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["a"]
+      },
+      {
+        "id": "bexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["b"]
+      },
+      {
+        "id": "cexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["c"]
+      },
+      {
+        "id": "dexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["d"]
+      },
+      {
+        "id": "eexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["e"]
+      },
+      {
+        "id": "fexit",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["f"]
+      },
+      {
+        "id": "g",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["a", "b", "c", "d", "e", "f"]
+      }
+    ]
+  }
+}

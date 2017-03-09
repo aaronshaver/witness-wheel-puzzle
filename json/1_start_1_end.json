@@ -1,0 +1,18 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "a",
+        "is_end_node": false,
+        "is_start_node": true,
+        "connections": ["z"]
+      },
+      {
+        "id": "z",
+        "is_end_node": true,
+        "is_start_node": false,
+        "connections": ["a"]
+      },
+    ]
+  }
+}
