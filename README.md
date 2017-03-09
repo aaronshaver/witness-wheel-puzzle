@@ -1,17 +1,25 @@
-# witness-wheel-puzzle
+# graph-unique-paths
 
 ## Description
 
-This program calculates the maximum unique paths for the "wheel" puzzles from the game The Witness.
+This program calculates the maximum unique paths for graphs which have start and
+end nodes (you must start on a start node, and end on an end node). I was
+originally inspired by wanting to know how many permutations the "wheel" puzzles
+from the game The Witness had (the ones in the desert area). But this module is
+sufficiently flexible that you can use it on other types of graphs too.
 
-The puzzles have 7 normal nodes (which all act as starting points), and 6 of those nodes have "exit"
-nodes attached to the outside of them (where your path finishes and you're unable to draw anymore).
-You can't revisit or pass through a node if you've been on it in the past. There are 12 normal vertices in the puzzle.
-If you count the edge normal nodes connecting to the exit nodes, there are 18 vertices.
+The Witness puzzles have 7 normal nodes (which all act as starting points), and
+6 of those nodes have "end" nodes attached to the outside of them (where your
+path finishes and you're unable to draw anymore).
 
-Exits are special nodes: you can't start on an exit, and you must finish on an exit.
+You can't revisit or pass through a node if you've been on it in the past. There
+are 12 normal vertices in the puzzle. If you count the edge normal nodes
+connecting to the end nodes, there are 18 vertices.
 
-I will now attempt to draw an ASCII version of the puzzle:
+End nodes are special: you can't start on an end node, and you must finish on
+one.
+
+Here's my attempt to draw an ASCII version of the puzzle (end nodes not shown):
 
                            +------+
                            |      |
@@ -43,11 +51,14 @@ I will now attempt to draw an ASCII version of the puzzle:
                              |       |
                              +-------+
 
-If that diagram doesn't do the trick, try this URL, which has screenshots from the game: http://www.ign.com/wikis/the-witness/Desert_Ruins
+If that diagram doesn't make sense, try this URL, which has screenshots from the
+game: http://www.ign.com/wikis/the-witness/Desert_Ruins
 
 ## Usage
 
-To run the program: it's not intended to be run alone; import it as a module.
+To run the program: it's not intended to be run alone; import it as a module,
+then access its functions (pass a stringified piece of JSON into solve()).
+
 The tests file gives you good examples of how to use it.
 
 To run the tests: ``python -m unittest discover``
