@@ -56,11 +56,15 @@ game: http://www.ign.com/wikis/the-witness/Desert_Ruins
 
 ## Usage
 
-To run the program:
+### Module
 
-1. import ``graph_unique_paths``
-2. pass a stringified JSON object into solve()
+Here's an example of how to use this module:
 
-The tests file gives you good examples of how to do this.
+    import graph_unique_paths
+    with open('json/1_start_1_end.json', 'r') as file:
+        json_graph = file.read()
+    graph_unique_paths.solve(json_graph)
+
+### Tests
 
 To run the tests: ``python -m unittest discover``
