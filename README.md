@@ -2,7 +2,7 @@
 
 ## Description
 
-This program calculates the maximum unique paths for graphs which have start and
+This program calculates the maximum unique paths for directed graphs which have start and
 end nodes (you must start on a start node, and end on an end node). I was
 originally inspired by wanting to know how many permutations the "wheel" puzzles
 from the game The Witness had (the ones in the desert area). But this module is
