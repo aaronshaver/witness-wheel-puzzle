@@ -56,9 +56,11 @@ game: http://www.ign.com/wikis/the-witness/Desert_Ruins
 
 ## Usage
 
-To run the program: it's not intended to be run alone; import it as a module,
-then access its functions (pass a stringified piece of JSON into solve()).
+To run the program:
 
-The tests file gives you good examples of how to use it.
+1. import ``graph_unique_paths``
+2. pass a stringified JSON object into solve()
+
+The tests file gives you good examples of how to do this.
 
 To run the tests: ``python -m unittest discover``
