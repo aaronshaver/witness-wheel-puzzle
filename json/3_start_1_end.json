@@ -1,0 +1,36 @@
+{
+  "graph":{
+    "nodes":[
+      {
+        "a":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "z", "b", "c"
+          ]
+        },
+        "b":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "a", "c"
+          ]
+        },
+        "z":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "a"
+          ]
+        },
+        "c":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "b", "a"
+          ]
+        }
+      }
+    ]
+  }
+}

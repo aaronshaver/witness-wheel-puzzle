@@ -2,6 +2,13 @@
   "graph":{
     "nodes":[
       {
+        "a":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "z", "y"
+          ]
+        },
         "z":{
           "is_end_node":true,
           "is_start_node":false,
@@ -9,11 +16,11 @@
             "a"
           ]
         },
-        "a":{
-          "is_end_node":false,
-          "is_start_node":true,
+        "y":{
+          "is_end_node":true,
+          "is_start_node":false,
           "connections":[
-            "z"
+            "a"
           ]
         }
       }
