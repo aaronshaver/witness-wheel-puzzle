@@ -1,0 +1,99 @@
+{
+  "graph":{
+    "nodes":[
+      {
+        "a":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "z", "b", "g", "f"
+          ]
+        },
+        "b":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "y", "a", "c", "g"
+          ]
+        },
+        "c":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "x", "d", "b", "g"
+          ]
+        },
+        "d":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "w", "e", "c", "g"
+          ]
+        },
+        "e":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "v", "f", "g", "d"
+          ]
+        },
+        "f":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "u", "a", "e", "g"
+          ]
+        },
+        "g":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "a", "b", "c", "d", "e", "f"
+          ]
+        },
+        "z":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "a"
+          ]
+        },
+        "y":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "b"
+          ]
+        },
+        "x":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "c"
+          ]
+        },
+        "w":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "d"
+          ]
+        },
+        "v":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "e"
+          ]
+        },
+        "u":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "f"
+          ]
+        }
+      }
+    ]
+  }
+}
