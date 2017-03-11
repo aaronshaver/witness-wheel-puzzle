@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import json
-from pprint import pprint
 
 
 def get_nodes(graph, boolean_condition):
@@ -17,7 +16,7 @@ def find_all_paths(graph, start_node, end_node, path=None):
         path = []
     path = path + [start_node]
     if start_node == end_node:
-        return [path]  # doing [] is necessary for graphs with "cycle"
+        return [path]  # doing [] is necessary for graphs with a "cycle"
     connection_paths = []
     for node, metadata in graph["graph"]["nodes"][0].items():
         if node == start_node:

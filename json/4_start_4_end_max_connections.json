@@ -1,0 +1,64 @@
+{
+  "graph":{
+    "nodes":[
+      {
+        "a":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "z", "b", "c", "d"
+          ]
+        },
+        "b":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "a", "y", "c", "d"
+          ]
+        },
+        "c":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "a", "x", "b", "d"
+          ]
+        },
+        "d":{
+          "is_end_node":false,
+          "is_start_node":true,
+          "connections":[
+            "a", "w", "c", "b"
+          ]
+        },
+        "z":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "a"
+          ]
+        },
+        "y":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "b"
+          ]
+        },
+        "x":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "c"
+          ]
+        },
+        "w":{
+          "is_end_node":true,
+          "is_start_node":false,
+          "connections":[
+            "d"
+          ]
+        }
+      }
+    ]
+  }
+}

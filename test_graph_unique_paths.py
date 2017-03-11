@@ -36,3 +36,8 @@ class TestPuzzle(unittest.TestCase):
         with open('json/7_start_6_end.json', 'r') as file:
             json_graph = file.read()
         self.assertEqual(642, len(graph.solve(json_graph)))
+
+    def test_solve_4_start_4_end_max_connections(self):
+        with open('json/4_start_4_end_max_connections.json', 'r') as file:
+            json_graph = file.read()
+        self.assertEqual(64, len(graph.solve(json_graph)))
