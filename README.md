@@ -1,5 +1,18 @@
 # graph-unique-paths
 
+## Usage
+
+### Module
+
+Here's an example of how to use this module:
+
+    import graph_unique_paths as g
+    g.solve('json/1_start_1_end.json')
+
+### Tests
+
+To run the tests: ``python -m unittest discover``
+
 ## Description
 
 This program calculates the maximum unique paths for directed graphs which have start and
@@ -53,18 +66,3 @@ Here's my attempt to draw an ASCII version of the puzzle (end nodes not shown):
 
 If that diagram doesn't make sense, try this URL, which has screenshots from the
 game: http://www.ign.com/wikis/the-witness/Desert_Ruins
-
-## Usage
-
-### Module
-
-Here's an example of how to use this module:
-
-    import graph_unique_paths
-    with open('json/1_start_1_end.json', 'r') as file:
-        json_graph = file.read()
-    graph_unique_paths.solve(json_graph)
-
-### Tests
-
-To run the tests: ``python -m unittest discover``
