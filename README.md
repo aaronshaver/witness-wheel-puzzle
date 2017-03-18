@@ -4,10 +4,12 @@
 
 ### Module
 
-Here's an example of how to use this module:
+Example of how to use the module:
 
     import graph_unique_paths as g
     g.solve('json/1_start_1_end.json')
+
+It accepts a path to a .json file and returns a list of all the unique paths given the requirement that one start on a start node and finish on an end node.
 
 ### Tests
 
