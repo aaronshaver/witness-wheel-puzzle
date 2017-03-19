@@ -16,7 +16,7 @@ def _find_all_paths(graph, start_node, end_node, path=None):
         path = []
     path = path + [start_node]
     if start_node == end_node:
-        return [path]  # doing [] is necessary for graphs with a "cycle"
+        return [path]
     connection_paths = []
     for node, metadata in graph["graph"]["nodes"][0].items():
         if node == start_node:
@@ -39,12 +39,12 @@ def solve(json_file_path):
     graph = _get_json_string(json_file_path) 
     start_nodes = _get_nodes(graph, 'is_start_node')
     end_nodes = _get_nodes(graph, 'is_end_node')
+    all_paths = []
 
     for end_node in end_nodes:
         for start_node in start_nodes:
-            temp_paths = _find_all_paths(graph, start_node, end_node)
-            final_paths = []
-            for path in temp_paths:  # undo nesting caused by 'return [path]'
-                final_paths.append(path)
-    return final_paths
+            all_paths.append(_find_all_paths(graph, start_node, end_node))
+
+    flattened_list = [unique_path for sublist in all_paths for unique_path in sublist]
+    return flattened_list
 

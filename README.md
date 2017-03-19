@@ -9,11 +9,11 @@ Example of how to use the module:
     import graph_unique_paths as g
     g.solve('json/1_start_1_end.json')
 
-It accepts a path to a .json file and returns a list of all the unique paths given the requirement that one start on a start node and finish on an end node.
+It accepts a path to a .json file (the file defines the directed graph as a JSON object) and returns a list of all the unique paths, given the requirement that one begin on a start node and finish on an end node.
 
 ### Tests
 
-To run the tests: ``python -m unittest discover``
+To run the tests: ``python -m unittest discover`` (while in the `graph-unique-paths` directory)
 
 ## Description
 
