@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(name='graph_unique_paths',
-      version='0.1',
-      description='Calculates max traversal permutations of graph with nodes',
+      version='1.0',
+      description='Calculates max unique paths in directed graph with start and end nodes',
       url='',
       author='Aaron Shaver',
       author_email='',
