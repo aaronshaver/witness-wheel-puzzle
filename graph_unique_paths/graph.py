@@ -1,3 +1,4 @@
+""" Calculates max unique paths for directed graphs that have start and end nodes """
 #!/usr/bin/python3
 
 import json
@@ -23,7 +24,7 @@ def _find_all_paths(graph, start_node, end_node, path=None):
             for connection in metadata['connections']:
                 if connection not in path:
                     new_paths = _find_all_paths(graph, connection, end_node,
-                                               path)
+                                                path)
                     for new_path in new_paths:
                         connection_paths.append(new_path)
     return connection_paths
@@ -36,7 +37,15 @@ def _get_json_string(path):
 
 
 def solve(json_file_path):
-    graph = _get_json_string(json_file_path) 
+    """ Solves/calculates all unique paths for direct graphs with start, end nodes
+
+    Args:
+        json_file_path (str): path to .json file which contains graph nodes
+
+    Returns:
+        list: A list of lists of all the unique paths for the graph
+    """
+    graph = _get_json_string(json_file_path)
     start_nodes = _get_nodes(graph, 'is_start_node')
     end_nodes = _get_nodes(graph, 'is_end_node')
     all_paths = []
@@ -47,4 +56,3 @@ def solve(json_file_path):
 
     flattened_list = [unique_path for sublist in all_paths for unique_path in sublist]
     return flattened_list
-
