@@ -12,7 +12,6 @@ class Graph:
                 nodes.append(node)
         return nodes
 
-
     def _find_all_paths(self, graph, start_node, end_node, path=None):
         if path is None:
             path = []
@@ -24,18 +23,16 @@ class Graph:
             if node == start_node:
                 for connection in metadata['connections']:
                     if connection not in path:
-                        new_paths = self._find_all_paths(graph, connection, end_node,
-                                                    path)
+                        new_paths = self._find_all_paths(graph, connection,
+                                                         end_node, path)
                         for new_path in new_paths:
                             connection_paths.append(new_path)
         return connection_paths
-
 
     def _get_json_string(self, path):
         with open(path) as file:
             json_file = file.read()
             return json.loads(json_file)
-
 
     def solve(self, json_file_path):
         """ Solves/calculates all unique paths for direct graphs with start, end nodes
